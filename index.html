@@ -16,8 +16,8 @@
 		   document.getElementById("demo").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("GET", "https://api.binance.com/api/v3/ticker/bookTicker", true);
-	xhttp.setRequestHeader('Access-Control-Allow-Origin','*')
+	xhttp.open("GET", "https://api.binance.com/api/v3/ticker/bookTicker?symbol=ETHUSDT", true);
+	//xhttp.setRequestHeader('Access-Control-Allow-Origin','file://')
 	xhttp.send();
 
 </script>

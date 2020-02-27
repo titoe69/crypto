@@ -3,21 +3,17 @@
 </body>
 <script>
 
-var burl = "https://api.binance.com";
-
-var query = '/api/v1/ticker/24hr';
-    
-query += '?symbol=BTCUSDT';
-
-var url = burl + query;
-    
-var ourRequest = new XMLHttpRequest();
-
-ourRequest.open('GET',url,true);
-ourRequest.onload = function(){
-    console.log(ourRequest.responseText);
-}
-ourRequest.send();    
-    
+function UserAction() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+             alert(this.responseText);
+         }
+    };
+    xhttp.open("GET", "https://api.binance.com/api/v3/ticker/bookTicker?symbol=ETHUSDT", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+} 
+    UserAction();
 </script>
 </html>
